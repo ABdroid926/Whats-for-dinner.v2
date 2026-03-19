@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-genai.configure(api_key=os.getenv(AIzaSyAEXlfeKOnoP1k0OmAAE2lBJ11jqLtGcOM))
+genai.configure(api_key=os.getenv("G_API_KEY"))
 
 model = genai.GenerativeModel('gemini-pro-vision')
 
