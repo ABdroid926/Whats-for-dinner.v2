@@ -59,7 +59,7 @@ with st.sidebar:
         st.success("App Reset & Cache Cleared!")
 
 
-col1, col2 = st.columns([1, 1])
+col1, col_divider, col2 = st.columns([0.45, 0.1, 0.45], gap="medium")
 
 with col1:
     st.subheader(" Upload a photo of your fridge")
@@ -76,9 +76,9 @@ with col1:
                 
                 st.session_state['detected_items'] = get_food_list_from_image(image_data, input_prompt)
                 
-
-for _ in range(20): 
-         st.write("|")
+with col_divider : 
+    for _ in range(20): 
+        st.write("|")
         
 with col2:
     st.subheader("Your ingredients :")
