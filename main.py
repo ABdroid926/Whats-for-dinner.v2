@@ -16,7 +16,11 @@ os.environ["GOOGLE_API_KEY"] = api_key
 
 st.set_page_config(page_title="What's For Dinner", page_icon="🥪", layout="wide")
 st.markdown("<h1 style='text-align: center;'>Whats For Dinner 🥪 || Recipe Recommender</h1>", unsafe_allow_html=True)
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide") 
+
+st.write()
+st.write()
+st.write()
 
 
 if 'detected_items' not in st.session_state:
