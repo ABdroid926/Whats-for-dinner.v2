@@ -9,7 +9,7 @@ load_dotenv()
 
 genai.configure(api_key=os.getenv("G_API_KEY"))
 
-model = genai.GenerativeModel('gemini-pro-vision')
+model = genai.GenerativeModel('gemini 2.5 flash TTS')
 
 def get_gemini_response(input, image, prompt):
     response = model.generate_content([input, image[0], prompt])
