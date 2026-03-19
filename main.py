@@ -29,6 +29,8 @@ st.write()
 st.write()
 st.write()
 
+st.divider()
+
 
 if 'detected_items' not in st.session_state:
     st.session_state['detected_items'] = ""
