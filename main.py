@@ -72,7 +72,7 @@ with st.sidebar:
         st.success("App Reset & Cache Cleared!")
 
 
-col1, col2 = st.columns[0.45, 0.45]
+col1, col2 = st.columns(0.45,0.45)
 
 with col1:
     st.subheader(" Upload a photo of your fridge :")
