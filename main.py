@@ -50,5 +50,5 @@ the foods detected in a python list. Thank You!
 if submit:
     image_data = input_image_details(uploaded_file)
     response = get_gemini_response(input_prompt, image_data, input)
-    items = list(response)
-st.write(items)
+   
+st.write(response)
