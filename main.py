@@ -56,7 +56,7 @@ with st.sidebar:
         st.cache_data.clear()
         st.session_state['detected_items'] = ""
         st.session_state['last_recipe'] = None
-        st.success("App Reset!")
+        st.success("App Reset & Cache Cleared!")
 
 
 col1, col2 = st.columns([1, 1])
@@ -76,7 +76,10 @@ with col1:
                 
                 st.session_state['detected_items'] = get_food_list_from_image(image_data, input_prompt)
                 
-
+with spacer:
+      for _ in range(20): 
+         st.write("|")
+        
 with col2:
     st.subheader("Your ingredients :")
     
