@@ -43,12 +43,9 @@ if uploaded_file is not None:
 submit = st.button("Scan the Food(s)")
 
 input_prompt = """
-You have to identify different types of food in images. 
-The system should accurately detect and label various foods displayed in the image, providing the name 
-of the food and its location within the image (e.g., bottom left, right corner, etc.). Additionally, 
-the system should extract nutritional information and categorize the type of food (e.g., fruits, vegetables, grains, etc.) 
-based on the detected items. The output should include a comprehensive report or display showing the
-identified foods, their positions, names, and corresponding nutritional details.
+You have to identify different types of food in images,please.
+The system should accurately detect and label various foods displayed in the image,indivudually, can you also please return the names of 
+the foods detected in a python list. Thank You! 
 """
 
 if submit:
