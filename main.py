@@ -30,11 +30,11 @@ def input_image_details(uploaded_file):
     else:
         raise FileNotFoundError("No file uploaded")
     
-st.set_page_config(page_title="What's For Dinner 🥪:")
+st.set_page_config(page_title="Food Scan")
 
-st.header('Fridge Scan:')
-
-uploaded_file = st.file_uploader("Upload an image of your file", type=["jpg", 'jpeg', 'png'])
+st.header('Food Scan with Google Gemini')
+input = st.text_input("Input prompt: ", key='input')
+uploaded_file = st.file_uploader("Choose an image of the food or food table", type=["jpg", 'jpeg', 'png'])
 image = ""
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
@@ -43,9 +43,9 @@ if uploaded_file is not None:
 submit = st.button("Scan the Food(s)")
 
 input_prompt = """
-You have to identify different types of food in images. Can you please identify the names of the food items in the image and return them in
-a form of list?. Thank you!
-
+You have to identify different types of food in images. 
+Can you please accurately detect and label various foods displayed in the image,labelling each food item individually  
+then can you please return a list of the food items in the format of a python list. Thank You!
 """
 
 if submit:
