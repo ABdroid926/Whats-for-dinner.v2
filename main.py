@@ -15,7 +15,18 @@ genai.configure(api_key=api_key)
 os.environ["GOOGLE_API_KEY"] = api_key
 
 st.set_page_config(page_title="What's For Dinner", page_icon="🥪", layout="wide")
-st.title("What's For Dinner 🥪 || Recipe Recommender")
+
+st.markdown("""
+    <style>
+        .block-container {
+            padding-top: 1rem;
+            padding-bottom: 0rem;
+            margin-top: -2rem;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+st.title('Whats For Dinner 🥪 || Recipe Recommender')
 st.set_page_config(layout="wide")
 
 
@@ -63,7 +74,7 @@ col1, col_divider, col2 = st.columns([0.45, 0.1, 0.45], gap="medium")
 
 with col1:
     st.subheader(" Upload a photo of your fridge")
-    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", 'jpeg', 'png'])
+    uploaded_file = st.file_uploader(" ", type=["jpg", 'jpeg', 'png'])
     
     if uploaded_file:
         image = Image.open(uploaded_file)
