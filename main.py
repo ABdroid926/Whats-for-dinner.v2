@@ -15,7 +15,7 @@ genai.configure(api_key=api_key)
 os.environ["GOOGLE_API_KEY"] = api_key
 
 st.set_page_config(page_title="What's For Dinner", page_icon="🥪", layout="wide")
-st.title("Whats For Dinner 🥪 | Recipe Recommender")
+st.markdown("<h1 style='text-align: center; margin-top: -50px;'>Whats For Dinner 🥪</h1>", unsafe_allow_html=True)
 st.set_page_config(layout="wide") 
 
 st.write()
