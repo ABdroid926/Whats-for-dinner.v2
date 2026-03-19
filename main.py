@@ -49,6 +49,6 @@ of the food for each individual item in the form of a python list?. Thank you! "
 
 if submit:
     image_data = input_image_details(uploaded_file)
-    response = get_gemini_response(input_prompt, image_data, input)
+    response = get_gemini_response(input_prompt, image_data, "")
     st.subheader("Food Scan report: ")
     st.write(response)
