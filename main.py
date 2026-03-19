@@ -44,10 +44,11 @@ submit = st.button("Scan the Food(s)")
 input_prompt = """
 You have to identify different types of food in images,please.
 The system should accurately detect and label various foods displayed in the image,indivudually, can you also please return the names of 
-the foods detected in a python list. Thank You! 
+the foods detected in a list format with their names alone. Thank You! 
 """
 
 if submit:
     image_data = input_image_details(uploaded_file)
     response = get_gemini_response(input_prompt, image_data, input)
+    st.subheader("Food Scan report: ")
     st.write(response)
