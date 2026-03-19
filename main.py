@@ -7,9 +7,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-genai.configure(api_key=os.getenv("G_API_KEY"))
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-model = genai.GenerativeModel('gemini-2.5-flash')
+model = genai.GenerativeModel('gemini-pro-vision')
 
 def get_gemini_response(input, image, prompt):
     response = model.generate_content([input, image[0], prompt])
@@ -30,10 +30,11 @@ def input_image_details(uploaded_file):
     else:
         raise FileNotFoundError("No file uploaded")
     
-st.set_page_config(page_title="Whats For Dinner", page_icon="🥪")
-st.header('Whats For Dinner 🥪')
+st.set_page_config(page_title="What's For Dinner 🥪:")
 
-uploaded_file = st.file_uploader("Click an image of your fridge and upload it here as either jpg,jpeg or png", type=["jpg", 'jpeg', 'png'])
+st.header('Fridge Scan:')
+
+uploaded_file = st.file_uploader("Upload an image of your file", type=["jpg", 'jpeg', 'png'])
 image = ""
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
@@ -42,9 +43,9 @@ if uploaded_file is not None:
 submit = st.button("Scan the Food(s)")
 
 input_prompt = """
-You have to identify different types of food in images,please.
-The system should accurately detect and label various foods displayed in the image,indivudually, can you also please return the names of 
-the foods detected in a list format with their names alone. Thank You! 
+You have to identify different types of food in images. Can you please identify the names of the food items in the image and return them in
+a form of list?. Thank you!
+
 """
 
 if submit:
