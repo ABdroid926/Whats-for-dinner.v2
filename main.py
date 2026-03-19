@@ -33,8 +33,8 @@ def input_image_details(uploaded_file):
 st.set_page_config(page_title="Food Scan")
 
 st.header('Food Scan with Google Gemini')
-input = st.text_input("Input prompt: ", key='input')
-uploaded_file = st.file_uploader("Choose an image of your fridge", type=["jpg", 'jpeg', 'png'])
+
+uploaded_file = st.file_uploader("Upload an image of your fridge", type=["jpg", 'jpeg', 'png'])
 image = ""
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
