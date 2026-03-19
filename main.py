@@ -16,18 +16,7 @@ os.environ["GOOGLE_API_KEY"] = api_key
 
 st.set_page_config(page_title="What's For Dinner?", page_icon="🥪", layout="wide")
 st.markdown("<h1 style='text-align: center; margin-top: -50px;'>What's For Dinner? 🥪</h1>", unsafe_allow_html=True)
-st.write()
-st.set_page_config(layout="wide") 
-
-st.write()
-st.write()
-st.write()
-st.write()
-st.write()
-st.write()
-st.write()
-st.write()
-st.write()
+st.container(10)
 
 st.divider()
 
