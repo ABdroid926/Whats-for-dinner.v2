@@ -30,11 +30,10 @@ def input_image_details(uploaded_file):
     else:
         raise FileNotFoundError("No file uploaded")
     
-st.set_page_config(page_title="Food Scan")
+st.set_page_config(page_title="Whats For Dinner", page_icon="🥪")
+st.header('Whats For Dinner 🥪')
 
-st.header('Food Scan with Google Gemini')
-input = st.text_input("Input prompt: ", key='input')
-uploaded_file = st.file_uploader("Choose an image of the food or food table", type=["jpg", 'jpeg', 'png'])
+uploaded_file = st.file_uploader("Click an image of your fridge and upload it here as either jpg,jpeg or png", type=["jpg", 'jpeg', 'png'])
 image = ""
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
@@ -51,5 +50,5 @@ the foods detected in a python list. Thank You!
 if submit:
     image_data = input_image_details(uploaded_file)
     response = get_gemini_response(input_prompt, image_data, input)
-    st.subheader("Food Scan report: ")
-    st.write(response)
+    items = list(response)
+
