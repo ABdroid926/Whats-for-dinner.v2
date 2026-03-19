@@ -1,0 +1,4 @@
+streamlit
+dotenv
+pillow
+google-generativeai
