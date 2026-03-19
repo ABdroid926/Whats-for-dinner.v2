@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-genai.configure(api_key=os.getenv("AIzaSyAEXlfeKOnoP1k0OmAAE2lBJ11jqLtGcOM"))
+genai.configure(api_key=os.getenv(AIzaSyAEXlfeKOnoP1k0OmAAE2lBJ11jqLtGcOM))
 
 model = genai.GenerativeModel('gemini-pro-vision')
 
@@ -41,3 +41,18 @@ if uploaded_file is not None:
     st.image(image, caption="Uploaded Image", use_column_width=True)
 
 submit = st.button("Scan the Food(s)")
+
+input_prompt = """
+You have to identify different types of food in images. 
+The system should accurately detect and label various foods displayed in the image, providing the name 
+of the food and its location within the image (e.g., bottom left, right corner, etc.). Additionally, 
+the system should extract nutritional information and categorize the type of food (e.g., fruits, vegetables, grains, etc.) 
+based on the detected items. The output should include a comprehensive report or display showing the
+identified foods, their positions, names, and corresponding nutritional details.
+"""
+
+if submit:
+    image_data = input_image_details(uploaded_file)
+    response = get_gemini_response(input_prompt, image_data, input)
+    st.subheader("Food Scan report: ")
+    st.write(response)
