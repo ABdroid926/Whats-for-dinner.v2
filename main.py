@@ -45,7 +45,7 @@ submit = st.button("Scan the Food(s)")
 input_prompt = """
 You have to identify different types of food in images. 
 Can you please accurately detect and label various foods displayed in the image and providing the name 
-of the food for each individual item in the form of a list?. Thank you! """
+of the food for each individual item in the form of a python list?. Thank you! """
 
 if submit:
     image_data = input_image_details(uploaded_file)
