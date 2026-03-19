@@ -15,7 +15,7 @@ genai.configure(api_key=api_key)
 os.environ["GOOGLE_API_KEY"] = api_key
 
 st.set_page_config(page_title="What's For Dinner", page_icon="🥪", layout="wide")
-st.title('Whats For Dinner 🥪 || Recipe Recommender')
+st.markdown("<h1 style='text-align: center;'>Whats For Dinner 🥪 || Recipe Recommender</h1>", unsafe_allow_html=True)
 st.set_page_config(layout="wide")
 
 
@@ -62,7 +62,7 @@ with st.sidebar:
 col1, col_divider, col2 = st.columns([0.45, 0.1, 0.45], gap="medium")
 
 with col1:
-    st.subheader(" Upload a photo of your fridge")
+    st.subheader(" Upload a photo of your fridge :")
     uploaded_file = st.file_uploader(" ", type=["jpg", 'jpeg', 'png'])
     
     if uploaded_file:
