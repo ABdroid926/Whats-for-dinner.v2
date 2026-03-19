@@ -77,7 +77,7 @@ with col1:
                 st.session_state['detected_items'] = get_food_list_from_image(image_data, input_prompt)
                 
 with col_divider : 
-    for _ in range(20): 
+    for _ in range(10): 
         st.write("|")
         
 with col2:
