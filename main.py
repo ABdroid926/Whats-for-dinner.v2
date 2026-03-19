@@ -30,9 +30,8 @@ def input_image_details(uploaded_file):
     else:
         raise FileNotFoundError("No file uploaded")
     
-st.set_page_config(page_title="Food Scan")
-
-st.header('Food Scan with Google Gemini')
+st.set_page_config(page_title="Whats For Dinner", page_icon="🥪")
+st.title('Whats For Dinner 🥪 || Recipe Recommender ')
 
 uploaded_file = st.file_uploader("Upload an image of your fridge", type=["jpg", 'jpeg', 'png'])
 image = ""
