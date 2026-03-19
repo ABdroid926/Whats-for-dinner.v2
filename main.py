@@ -14,8 +14,9 @@ genai.configure(api_key=api_key)
 
 os.environ["GOOGLE_API_KEY"] = api_key
 
-st.set_page_config(page_title="Whats For Dinner", page_icon="🥪", layout="wide")
-st.title('Whats For Dinner 🥪 || Recipe Recommender')
+st.set_page_config(page_title="What's For Dinner", page_icon="🥪", layout="wide")
+st.title("What's For Dinner 🥪 || Recipe Recommender")
+st.set_page_config(layout="wide")
 
 
 if 'detected_items' not in st.session_state:
@@ -66,7 +67,7 @@ with col1:
     
     if uploaded_file:
         image = Image.open(uploaded_file)
-        st.image(image, caption="Youe Fridge ", use_column_width=True)
+        st.image(image, caption="Your Fridge ", use_column_width=True)
         
         if st.button("Scan Fridge Content"):
             with st.spinner('Scanning your pantry...'):
@@ -75,7 +76,7 @@ with col1:
                 
                 st.session_state['detected_items'] = get_food_list_from_image(image_data, input_prompt)
                 
-st.divider()
+
 with col2:
     st.subheader("Your ingredients :")
     
