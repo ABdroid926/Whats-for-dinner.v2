@@ -80,9 +80,21 @@ with col1:
                 
                 st.session_state['detected_items'] = get_food_list_from_image(image_data, input_prompt)
                 
-with col_divider : 
-    for _ in range(10): 
-        st.write("|")
+with col_divider:
+   
+    st.markdown("""
+        <div style="
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100%;
+        ">
+            <div style="
+                border-left: 2px solid #555; 
+                height: 600px;
+            "></div>
+        </div>
+    """, unsafe_allow_html=True)
         
 with col2:
     st.subheader("Your ingredients :")
