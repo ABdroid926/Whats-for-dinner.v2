@@ -7,9 +7,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+genai.configure(api_key=os.getenv("G_API_KEY"))
 
-model = genai.GenerativeModel('gemini-pro-vision')
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 def get_gemini_response(input, image, prompt):
     response = model.generate_content([input, image[0], prompt])
@@ -34,7 +34,7 @@ st.set_page_config(page_title="Food Scan")
 
 st.header('Food Scan with Google Gemini')
 input = st.text_input("Input prompt: ", key='input')
-uploaded_file = st.file_uploader("Choose an image of the food or food table", type=["jpg", 'jpeg', 'png'])
+uploaded_file = st.file_uploader("Choose an image of your fridge", type=["jpg", 'jpeg', 'png'])
 image = ""
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
@@ -44,12 +44,8 @@ submit = st.button("Scan the Food(s)")
 
 input_prompt = """
 You have to identify different types of food in images. 
-The system should accurately detect and label various foods displayed in the image, providing the name 
-of the food and its location within the image (e.g., bottom left, right corner, etc.). Additionally, 
-the system should extract nutritional information and categorize the type of food (e.g., fruits, vegetables, grains, etc.) 
-based on the detected items. The output should include a comprehensive report or display showing the
-identified foods, their positions, names, and corresponding nutritional details.
-"""
+Can you please accurately detect and label various foods displayed in the image and providing the name 
+of the food for each individual item in the form of a list?. Thank you!
 
 if submit:
     image_data = input_image_details(uploaded_file)
