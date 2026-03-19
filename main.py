@@ -31,7 +31,7 @@ def input_image_details(uploaded_file):
 def generate_recommendations(ingredients_text):
     
     try:
-        llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.7)
+        llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.7)
         prompt = f"Given the ingredients: {ingredients_text}, suggest five easy-to-cook step-by-step recipes."
         response = llm.invoke(prompt)
         return response.content
