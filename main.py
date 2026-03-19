@@ -15,17 +15,6 @@ genai.configure(api_key=api_key)
 os.environ["GOOGLE_API_KEY"] = api_key
 
 st.set_page_config(page_title="What's For Dinner", page_icon="🥪", layout="wide")
-
-st.markdown("""
-    <style>
-        .block-container {
-            padding-top: 1rem;
-            padding-bottom: 0rem;
-            margin-top: -2rem;
-        }
-    </style>
-    """, unsafe_allow_html=True)
-
 st.title('Whats For Dinner 🥪 || Recipe Recommender')
 st.set_page_config(layout="wide")
 
