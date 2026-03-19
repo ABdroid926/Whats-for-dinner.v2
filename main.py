@@ -61,7 +61,7 @@ with st.sidebar:
 col1, col2 = st.columns([1, 1])
 
 with col1:
-    st.subheader("📸 Upload a photo of your fridge")
+    st.subheader(" Upload a photo of your fridge")
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", 'jpeg', 'png'])
     
     if uploaded_file:
@@ -74,12 +74,13 @@ with col1:
                 image_data = input_image_details(uploaded_file)
                 
                 st.session_state['detected_items'] = get_food_list_from_image(image_data, input_prompt)
-
+                
+st.divider()
 with col2:
     st.subheader("Your ingredients :")
     
     user_ingredients = st.text_area(
-        "Edit detected ingredients or add pantry staples (salt, oil, etc.):",
+        "Edit detected ingredients or add pantry staples :",
         value=st.session_state['detected_items'],
         height=150
     )
@@ -95,5 +96,5 @@ with col2:
 
 if st.session_state['last_recipe']:
     st.markdown("---")
-    st.markdown("### 👨‍🍳 Your Personalized Recipes")
+    st.markdown("### 👨‍🍳 Your Recipes :")
     st.markdown(st.session_state['last_recipe'])
