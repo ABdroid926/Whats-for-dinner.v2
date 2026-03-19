@@ -89,7 +89,7 @@ def generate_recommendations(input_text):
             return None
 
 with st.spinner('Tasty Food Is A Moment Away...'):
-            recipe = generate_recommendations(user_input)
+            recipe = generate_recommendations(items)
             st.session_state['last_recipe'] = recipe
 
 if 'last_recipe' in st.session_state:
